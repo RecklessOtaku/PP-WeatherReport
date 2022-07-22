@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="tile">
+    <div class="content container has-text-centered">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-12">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-warning">
+                            <p class="subtitle">
+                                Use the form below to get <strong>weather forecast.</strong>
+                            </p>
+                            <p class="subtitle">
+                            <form action="{{ url_for('forecast_result') }}" method="post">
+                                <input class="input" name="location" type="text"
+                                    placeholder="Please enter desired location...">
+                                <button class="button is-info" type="submit">
+                                    Submit
+                                </button>
+                            </form>
+                            </p>
+                            <p class="subtitle">
+
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

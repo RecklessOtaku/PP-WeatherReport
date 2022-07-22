@@ -1,0 +1,35 @@
+{% extends 'forecast.html' %}
+
+{% block body %}
+<div class="tile">
+    <div class="content container has-text-centered">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-12">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <p class="subtitle">Weather forecast for <strong>{{ place }}</strong></p>
+                        {% for key, value in data.items() %}
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">
+                                {{ key }}
+                            </p>
+                            <p class="subtitle">
+                                <img src="{{ value[4] }}" alt="weather icon" width="128" height="128">
+                            </p>
+                            <p class="subtitle">
+                            <ul>
+                                <li>Weather is: <strong>{{ value[3] }}</strong></li>
+                                <li>Temperature is: <strong>{{ value[0] }}</strong></li>
+                                <li>Wind speed is: <strong>{{ value[1] }}</strong></li>
+                                <li>Humidity is: <strong>{{ value[2] }}</strong></li>
+                            </ul>
+                            </p>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="tile">
+    <div class="content container has-text-centered">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-12">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">
+                                Error 500
+                            </p>
+                            <p class="subtitle">
+                                Looks like something is wrong with Your request...
+                            </p>
+                            <p class="subtitle is-underlined">
+                                Tips:
+                            </p>
+                            <ul>
+                                <li>Please consider entering a <strong>valid location</strong>.</li>
+                                <li>Please check Your <strong>location spelling</strong>.</li>
+                            </ul>
+                            <p>If error still occures, contact me using <strong>"Contact"</strong> tab.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        WeatherReport
+    </title>
+    <style>
+        html {
+            background: url(static/background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        ul {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item is-underlined" href="/">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="current">
+                    Current
+                </a>
+
+                <a class="navbar-item" href="forecast">
+                    Forecast
+                </a>
+
+                <a class="navbar-item" href="contact">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    <div class="tile">
+        <div class="content container has-text-centered">
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical is-12">
+                    <div class="tile">
+                        <div class="tile is-parent is-vertical">
+                            <article class="tile is-child notification is-warning">
+                                <p class="title is-underlined"><strong>WeatherReport</strong></p>
+                                <p class="subtitle">
+                                    This is pet-project in the field of meteorology.
+                                </p>
+                                <p>
+                                    This project uses the following technologies:
+                                </p>
+                                <p>
+                                <ul>
+                                    <li>
+                                        <strong>Python</strong> programming language.
+                                    </li>
+                                    <li>
+                                        <strong>Flask</strong> micro web framework.
+                                    </li>
+                                    <li>
+                                        <strong>Requests</strong> library.
+                                    </li>
+                                    <li>
+                                        <strong>GeoPy</strong> library.
+                                    </li>
+                                </ul>
+                                </p>
+                                <p>
+                                    This project's goal is to show it's author's abitily to use Python programming
+                                    language and it's standart/third-party libraries in order to build plain and simple
+                                    web applications.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+</body>
+
+</html>

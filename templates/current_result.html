@@ -1,0 +1,26 @@
+{% extends 'current.html' %}
+
+{% block body %}
+<div class="tile">
+  <div class="content container has-text-centered">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-12">
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+            <p class="subtitle">Current weather at <strong>{{place}}</strong></p>
+            <article class="tile is-child notification is-warning">
+              <p class="subtitle">
+                <img src="{{ icon }}" alt="weather icon" width="128" height="128" />
+              </p>
+              <p class="subtitle">Weather is: <strong>{{desc}}</strong></p>
+              <p class="subtitle">Temperature is: <strong>{{temp}}</strong></p>
+              <p class="subtitle">Humidity is: <strong>{{humid}}</strong></p>
+              <p class="subtitle">Wind speed is: <strong>{{wind}}</strong></p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
