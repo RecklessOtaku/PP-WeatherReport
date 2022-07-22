@@ -5,7 +5,7 @@ from collections import Counter
 
 
 # OpenWeatherMap API key
-KEY = "981542aa23cce064ff88f9ca9449e67c"
+KEY = "YourKeyHere"
 # OpenWeatherMap current weather API url
 CUR = "https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}"
 # OpenWeatherMap weather forecast API url
