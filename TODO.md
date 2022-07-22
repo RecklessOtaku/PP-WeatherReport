@@ -10,7 +10,6 @@
 ### Optimization
 
 - [ ] Cache results temporarily to decrease API calls count.
-- [ ] Move API key from source code to environment variable.
 
 ### Design
 
