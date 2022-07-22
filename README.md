@@ -8,3 +8,5 @@
 - Flask micro web framework.
 - Requests HTTP library.
 - GeoPy geocoding library.
+
+## This pet-project is deployed at http://recklessotaku.pythonanywhere.com/
