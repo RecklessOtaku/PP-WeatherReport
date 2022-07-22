@@ -4,7 +4,7 @@
 
 ### Features
 
-- [ ] Add current weather at random place widget to the main page.
+- [ ] Add current weather widget to the main page.
 
 ### Optimization
 
