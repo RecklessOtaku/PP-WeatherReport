@@ -22,8 +22,9 @@ def index():
     with open(cities_file_path, "r", encoding="utf-8") as cities_file:
         cities = cities_file.readlines()
         random_city = cities[randint(0, len(cities) - 1)]
+        random_city = random_city.replace("\n", "").split(sep=", ")
 
-        random_weather = current_weather(random_city)
+        random_weather = current_weather(random_city[0])
         description = random_weather["description"]
         icon = icon_selector(description)
         temperature = random_weather["temperature"]
@@ -32,7 +33,7 @@ def index():
 
     return render_template(
         "index.html",
-        place=random_city,
+        place=", ".join(random_city),
         icon=icon,
         desc=description,
         temp=temperature,
