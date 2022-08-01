@@ -11,10 +11,14 @@
                             <p class="subtitle">
                                 Use the form below to get <strong>current weather report.</strong>
                             </p>
+                            <p>
+                                You can use latin characters and special characters that sometimes occur in city names.
+                            </p>
                             <p class="subtitle">
                             <form action="{{ url_for('current_result') }}" method="post">
-                                <input class="input" name="location" type="text" placeholder="Please enter city name..."
-                                    required pattern="^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$">
+                                <input class="input" name="location" type="text"
+                                    placeholder="Please enter the city name..." required
+                                    pattern="^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$">
                                 <button class="button is-info" type="submit">
                                     Submit
                                 </button>
