@@ -18,7 +18,7 @@ cache = Cache(app)
 @app.route("/")
 @cache.cached(timeout=80)
 def index():
-    cities_file_path = "PP-WeatherReport\\static\\cities.txt"
+    cities_file_path = "static/cities.txt"
     with open(cities_file_path, "r", encoding="utf-8") as cities_file:
         cities = cities_file.readlines()
         random_city = cities[randint(0, len(cities) - 1)]
