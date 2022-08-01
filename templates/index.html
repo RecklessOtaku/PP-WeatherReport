@@ -91,6 +91,20 @@
                                     web applications.
                                 </p>
                             </article>
+                            <article class="tile is-child notification is-warning">
+                                <p class="subtitle">
+                                    Current weather at random place on planet Earth
+                                </p>
+                                <p class="subtitle">Current weather at <strong>{{place}}</strong></p>
+                                <article class="tile is-child notification is-warning">
+                                    <p class="subtitle">
+                                        <img src="{{ icon }}" alt="weather icon" width="128" height="128" />
+                                    </p>
+                                    <p class="subtitle">Weather is: <strong>{{desc}}</strong></p>
+                                    <p class="subtitle">Temperature is: <strong>{{temp}}</strong></p>
+                                    <p class="subtitle">Humidity is: <strong>{{humid}}</strong></p>
+                                    <p class="subtitle">Wind speed is: <strong>{{wind}}</strong></p>
+                                </article>
                         </div>
                     </div>
                 </div>

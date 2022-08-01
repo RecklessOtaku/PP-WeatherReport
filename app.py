@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from funcs import current_weather, weather_forecast, icon_selector
 from flask_caching import Cache
+from random import randint
 
 
 config = {
@@ -17,7 +18,27 @@ cache = Cache(app)
 @app.route("/")
 @cache.cached(timeout=80)
 def index():
-    return render_template("index.html")
+    cities_file_path = "PP-WeatherReport\\static\\cities.txt"
+    with open(cities_file_path, "r", encoding="utf-8") as cities_file:
+        cities = cities_file.readlines()
+        random_city = cities[randint(0, len(cities) - 1)]
+
+        random_weather = current_weather(random_city)
+        description = random_weather["description"]
+        icon = icon_selector(description)
+        temperature = random_weather["temperature"]
+        humidity = random_weather["humidity"]
+        wind = random_weather["wind"]
+
+    return render_template(
+        "index.html",
+        place=random_city,
+        icon=icon,
+        desc=description,
+        temp=temperature,
+        humid=humidity,
+        wind=wind,
+    )
 
 
 # Page for user to provide location name in order to get current weather
