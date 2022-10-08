@@ -1,22 +1,13 @@
 from flask import Flask, render_template, request
 from funcs import current_weather, weather_forecast, icon_selector
-from flask_caching import Cache
 from random import randint
 
 
-config = {
-    "CACHE_TYPE": "SimpleCache",
-    "CACHE_DEFAULT_TIMEOUT": 300,
-}
-
 app = Flask(__name__)
-app.config.from_mapping(config)
-cache = Cache(app)
 
 
 # Home page of web application
 @app.route("/")
-@cache.cached(timeout=80)
 def index():
     cities_file_path = "static/cities.txt"
     with open(cities_file_path, "r", encoding="utf-8") as cities_file:
@@ -44,14 +35,12 @@ def index():
 
 # Page for user to provide location name in order to get current weather
 @app.route("/current", methods=["POST", "GET"])
-@cache.cached(timeout=80)
 def current():
     return render_template("current.html")
 
 
 # Page for displaying current weather report
 @app.route("/current_result", methods=["POST", "GET"])
-@cache.cached(timeout=80)
 def current_result():
     # Reading user input using web form's name
     place = request.form["location"]
@@ -77,14 +66,12 @@ def current_result():
 
 # Page for user to provide location name in order to get weather forecast
 @app.route("/forecast", methods=["POST", "GET"])
-@cache.cached(timeout=80)
 def forecast():
     return render_template("forecast.html")
 
 
 # Page for displaying weather forecast
 @app.route("/forecast_result", methods=["POST", "GET"])
-@cache.cached(timeout=80)
 def forecast_result():
     place = request.form["location"]
     data = weather_forecast(place)
@@ -98,21 +85,18 @@ def forecast_result():
 
 # Page for user to contact application's author or view application's code
 @app.route("/contact")
-@cache.cached(timeout=80)
 def contact():
     return render_template("contact.html")
 
 
 # Page which is displayed when user encounters "Not Found" error
 @app.errorhandler(404)
-@cache.cached(timeout=80)
 def page_not_found(e):
     return render_template("404.html"), 404
 
 
 # Page which is displayed when user encounters "Internal Server Error" error
-@app.errorhandler(500)
-@cache.cached(timeout=80)
+@1.errorhandler(500)
 def internal_server_error(e):
     return render_template("500.html"), 500
 
